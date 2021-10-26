@@ -26,11 +26,22 @@ def print_word_freq(file):
     asterisk = '*'
     i = 0
 
+    max_key_list = []
+    max_value_list = []
+
     while i < 10:
         max_key = max(keys, key=keys.get)
-        print(f"{max_key} | {keys[max_key]} {asterisk * keys[max_key]}")
+        max_key_list.append(max_key)
+        max_value_list.append(keys[max_key])
         keys.pop(max_key)
         i += 1
+
+    float_length = len(max(max_key_list, key=len))
+
+    zipped_maxxes = zip(max_key_list, max_value_list)
+
+    for key, value in zipped_maxxes:
+        print(f"{key.rjust(float_length)} | {value} {asterisk * value}")
 
     pass
 
