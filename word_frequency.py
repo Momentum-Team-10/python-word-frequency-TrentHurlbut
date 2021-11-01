@@ -100,8 +100,6 @@ def print_word_freq(file):
     for key, value in zipped_maxxes:
         print(f"{key.rjust(float_length)} | {value} {asterisk * value}")
 
-    pass
-
 
 if __name__ == "__main__":
     import argparse
